@@ -142,11 +142,15 @@ tr:hover td{background:rgba(255,255,255,.02);}
   .topbar,.hdr,.nav,.main{padding-left:16px;padding-right:16px;}
   .mugrid,.tcard-sides{grid-template-columns:1fr;}
 }
+.tf-link{display:flex;align-items:center;padding:0 20px;color:var(--accent);
+  font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;
+  border-left:1px solid var(--border);transition:opacity .15s;}
+.tf-link:hover{opacity:0.75;}
 
 </style>
 </head>
 <body>
-<div class='topbar'><div class='brand'>&#x26A1; SLEEPER</div><div class='ltabs' id='ltabs'></div></div>
+<div class='topbar'><div class='brand'>&#x26A1; SLEEPER</div><div class='ltabs' id='ltabs'></div><a class='tf-link' href='trade_flow.html'>Trade Flow &#x2192;</a></div>
 <div class='hdr'><div class='hdr-top'><div class='lname' id='lname'></div><div class='meta' id='meta'></div></div><div class='ybar' id='ybar'></div></div>
 <div class='nav' id='nav'></div>
 <div class='main' id='main'></div>
@@ -177,7 +181,7 @@ const posBadge=p=>`<span class="pos p${p||''}">${p||'?'}</span>`;
 
 function init(){
   switchLeague(CL,true);
-  document.getElementById('gen').textContent='Generated 19 Mar 2026 05:15  ·  Sleeper Analytics';
+  document.getElementById('gen').textContent='Generated 20 Mar 2026 06:13  ·  Sleeper Analytics';
 }
 
 function switchLeague(lf,force){

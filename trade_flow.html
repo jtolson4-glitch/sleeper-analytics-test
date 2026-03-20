@@ -186,6 +186,10 @@ tr:hover td { background:rgba(255,255,255,.02); }
 .empty { color:var(--muted); font-style:italic; padding:24px; text-align:center; }
 .gen { text-align:right; color:var(--muted); font-size:11px;
   padding:20px 40px; border-top:1px solid var(--border); margin-top:20px; }
+.back-link { display:flex; align-items:center; padding:0 20px 0 0; color:var(--accent);
+  font-size:13px; font-weight:500; text-decoration:none; white-space:nowrap;
+  border-right:1px solid var(--border); margin-right:4px; transition:opacity .15s; }
+.back-link:hover { opacity:0.75; }
 
 @media(max-width:700px) {
   .header,.nav,.main { padding-left:16px; padding-right:16px; }
@@ -210,6 +214,7 @@ tr:hover td { background:rgba(255,255,255,.02); }
   </div>
 </div>
 <div class='nav'>
+  <a class='back-link' href='index.html'>&#x2190; Dashboard</a>
   <button class='ntab' data-view='sankey'  onclick="switchView('sankey')">🔀 Flow Diagram</button>
   <button class='ntab' data-view='network' onclick="switchView('network')">🕸️ Network Graph</button>
   <button class='ntab' data-view='timeline' onclick="switchView('timeline')">📅 Timeline</button>
@@ -266,7 +271,7 @@ let activeFilter = 'all';
 /* ── Init ───────────────────────────────────────────────────────────── */
 function init() {
   document.getElementById('gen').textContent =
-    'Generated 20 Mar 2026 05:44  ·  Sleeper Analytics';
+    'Generated 20 Mar 2026 06:13  ·  Sleeper Analytics';
   switchView('sankey');
 }
 
